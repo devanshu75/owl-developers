@@ -1,13 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-  keyframes,
-  group
-} from '@angular/animations';
 
 @Component({
   selector: 'app-hero-section',
