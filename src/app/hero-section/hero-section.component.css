@@ -1,0 +1,54 @@
+
+.intro {
+    color: #fff;
+    height: 100vh;
+    position: relative;
+    letter-spacing: 0.3em;
+    font-family: sans-serif;
+}
+
+.intro h1 {
+    font-weight: 600;
+    font-size:3.5em;
+    position: absolute;
+    top: 30%;
+    cursor: pointer;
+}
+
+span:hover{
+    color: #949599;
+}
+
+.hero-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.hero-img img {   
+    position: absolute;
+    width: 70%;
+    top: 20%;
+  
+}
+
+@media(max-width:768px) {
+    .intro h1 {
+        font-size:2.1em ;
+    }
+
+    .hero-img img {   
+        position: absolute;
+        width: 60%;
+        top: 20%;
+      
+    }
+}
+
+@media(max-width:468px) {
+   .hero-img{
+       display: none;
+   }
+}
+
