@@ -18,10 +18,6 @@ body {
    CUSTOM SCROLLBAR (GLOBAL)
 ========================================= */
 
-/* =========================================
-   CUSTOM SCROLLBAR (BLACK + YELLOW)
-========================================= */
-
 /* Firefox */
 * {
   scrollbar-width: thin;
@@ -117,6 +113,48 @@ body {
 }
 
 /* Menu Wrapper */
+/* =========================================
+   BOOTSTRAP TAB CUSTOMIZATION
+========================================= */
+
+.owl-menu .nav-link {
+  border: none !important;
+  background: transparent !important;
+  color: #111 !important;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Remove bootstrap underline */
+.owl-menu .nav-link::after {
+  display: none !important;
+}
+
+/* Active state handled by indicator */
+.owl-menu .nav-link.active {
+  color: #111 !important;
+  font-weight: 500;
+}
+
+/* Smooth fade for content */
+.tab-pane {
+  animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .owl-menu {
   position: relative;
   background: var(--bg-surface);

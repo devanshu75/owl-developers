@@ -1,3 +1,6 @@
+/* =========================================
+   MOBILE MENU TOGGLE
+========================================= */
 const toggle = document.getElementById("menuToggle");
 const navCollapse = document.getElementById("owlNav");
 
@@ -6,52 +9,64 @@ toggle.addEventListener("click", () => {
   navCollapse.classList.toggle("show");
 });
 
-document.querySelectorAll(".nav-link, .nav-cta-btn").forEach((link) => {
-  link.addEventListener("click", () => {
+/* Close mobile menu when tab clicked */
+document.querySelectorAll(".nav-link, .nav-cta-btn").forEach((el) => {
+  el.addEventListener("click", () => {
     toggle.classList.remove("active");
     navCollapse.classList.remove("show");
   });
 });
 
+/* =========================================
+   NAVBAR SHRINK ON SCROLL
+========================================= */
 window.addEventListener("scroll", () => {
-  const nav = document.querySelector(".owl-navbar");
-  nav.classList.toggle("shrink", window.scrollY > 50);
+  document
+    .querySelector(".owl-navbar")
+    .classList.toggle("shrink", window.scrollY > 50);
 });
 
+/* =========================================
+   SLIDING INDICATOR (BOOTSTRAP TABS SAFE)
+========================================= */
 const indicator = document.querySelector(".nav-indicator");
-const links = document.querySelectorAll(".owl-menu .nav-link");
+const navLinks = document.querySelectorAll(".owl-menu .nav-link");
 
+/* Move indicator */
 function moveIndicator(el) {
   const rect = el.getBoundingClientRect();
-  const parentRect = el.parentElement.parentElement.getBoundingClientRect();
+  const parentRect = el.closest(".owl-menu").getBoundingClientRect();
 
-  indicator.style.width = rect.width + "px";
-  indicator.style.left = rect.left - parentRect.left + "px";
+  indicator.style.width = `${rect.width}px`;
+  indicator.style.left = `${rect.left - parentRect.left}px`;
 }
 
-// Set indicator on load (active link)
+/* Initial position */
 window.addEventListener("load", () => {
-  const activeLink = document.querySelector(".owl-menu .nav-link.active");
-  if (activeLink) moveIndicator(activeLink);
+  const active = document.querySelector(".owl-menu .nav-link.active");
+  if (active) moveIndicator(active);
 });
 
-// Move on hover
-links.forEach((link) => {
+/* Move when Bootstrap activates tab */
+navLinks.forEach((link) => {
+  link.addEventListener("shown.bs.tab", () => {
+    moveIndicator(link);
+  });
+
+  /* Hover preview */
   link.addEventListener("mouseenter", () => {
     moveIndicator(link);
   });
-
-  link.addEventListener("click", () => {
-    links.forEach((l) => l.classList.remove("active"));
-    link.classList.add("active");
-    moveIndicator(link);
-  });
 });
 
-// Reset to active when mouse leaves menu
+/* Reset on mouse leave */
 document.querySelector(".owl-menu").addEventListener("mouseleave", () => {
-  const activeLink = document.querySelector(".owl-menu .nav-link.active");
-  if (activeLink) moveIndicator(activeLink);
+  const active = document.querySelector(".owl-menu .nav-link.active");
+  if (active) moveIndicator(active);
 });
 
-
+/* Recalculate on resize */
+window.addEventListener("resize", () => {
+  const active = document.querySelector(".owl-menu .nav-link.active");
+  if (active) moveIndicator(active);
+});

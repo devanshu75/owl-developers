@@ -49,30 +49,76 @@ and perform when it matters most
                     <span></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="owlNav">
-                    <ul class="navbar-nav owl-menu justify-center align-items-center">
-                        <div class="nav-indicator"></div>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link active" href="#home">Home</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
+                    <ul class="navbar-nav owl-menu align-items-center nav" role="tablist">
+                        <span class="nav-indicator"></span>
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="nav-link active"
+                                data-bs-toggle="tab"
+                                data-bs-target="#about"
+                                type="button"
+                            >
+                                About
+                            </button>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#services">Services</a>
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="nav-link"
+                                data-bs-toggle="tab"
+                                data-bs-target="#services"
+                                type="button"
+                            >
+                                Services
+                            </button>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="nav-link"
+                                data-bs-toggle="tab"
+                                data-bs-target="#projects"
+                                type="button"
+                            >
+                                Projects
+                            </button>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#blog">Blog</a>
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="nav-link"
+                                data-bs-toggle="tab"
+                                data-bs-target="#blog"
+                                type="button"
+                            >
+                                Blog
+                            </button>
                         </li>
-                        <li class="nav-item">
-                            <a class="btn nav-cta-btn" href="#contact">Contact Us</a>
+                        <li class="nav-item ms-2">
+                            <button class="btn nav-cta-btn" data-bs-toggle="tab" data-bs-target="#contact">
+                                Contact Us
+                            </button>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="container tab-content mt-5">
+            <div class="tab-pane fade show active" id="about" role="tabpanel">
+                <h2>About</h2>
+                <p>About Owl Developers content</p>
+            </div>
+            <div class="tab-pane fade" id="services" role="tabpanel">
+                <h2>Services</h2>
+                <!-- service cards -->
+            </div>
+            <div class="tab-pane fade" id="projects" role="tabpanel">
+                <h2>Projects</h2>
+            </div>
+            <div class="tab-pane fade" id="blog" role="tabpanel">
+                <h2>Blog</h2>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel">
+                <h2>Contact Us</h2>
+            </div>
+        </div>
         <!-- SERVICES -->
         <section id="services">
             <div class="container">
