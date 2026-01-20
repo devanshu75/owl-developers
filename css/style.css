@@ -18,29 +18,35 @@ body {
    CUSTOM SCROLLBAR (GLOBAL)
 ========================================= */
 
+/* =========================================
+   CUSTOM SCROLLBAR (BLACK + YELLOW)
+========================================= */
+
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-brand) transparent;
+  scrollbar-color: var(--color-brand) #000000;
 }
 
 /* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
-  width: 50px;
+  width: 20px;
 }
 
+/* Scrollbar background */
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: #000000;
 }
 
+/* Scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background: var(--color-brand);
   border-radius: 10px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
+  border: 2px solid #000000; /* separation for clean look */
   transition: background 0.3s ease;
 }
 
+/* Hover effect */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-hover);
 }
