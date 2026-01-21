@@ -398,34 +398,24 @@ body {
 }
 
 /* =========================================
-   RESPONSIVE
-========================================= */
-@media (max-width: 768px) {
-  .hero-text-bg h1 {
-    font-size: 2.6rem;
-    letter-spacing: 3px;
-  }
-
-  .hero-text-bg p {
-    font-size: 0.9rem;
-  }
-
-  .hero-logo-front img {
-    width: 200px;
-  }
-}
-
-/* =========================================
    SECTIONS
 ========================================= */
 section {
-  padding: 90px 0;
+  padding: 40px 0;
 }
 
 .section-title {
-  font-size: 2.2rem;
-  margin-bottom: 50px;
+  color: #000;
+  font-family: "Ultra", serif;
+  font-size: 5rem;
+  text-transform: uppercase;
   text-align: center;
+}
+
+.section-title span {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--color-brand);
 }
 
 /* =========================================
@@ -456,10 +446,11 @@ section {
 }
 
 /* =========================================
-   ABOUT
+  What Makes Us Different
 ========================================= */
+
 .about-text {
-  max-width: 700px;
+  width: 85%;
   margin: auto;
   color: var(--text-secondary);
   text-align: center;
@@ -490,6 +481,19 @@ footer {
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.2rem;
+  }
+
+  .hero-text-bg h1 {
+    font-size: 2.6rem;
+    letter-spacing: 3px;
+  }
+
+  .hero-text-bg p {
+    font-size: 0.9rem;
+  }
+
+  .hero-logo-front img {
+    width: 200px;
   }
 }
 
