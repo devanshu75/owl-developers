@@ -9,15 +9,22 @@ const backdrop = document.getElementById("menuBackdrop");
 function openMenu() {
   menu.classList.add("active");
   backdrop.classList.add("active");
-  toggle.style.display = "none"; // hide hamburger
+  toggle.classList.add("active");
 }
 
 function closeMenu() {
   menu.classList.remove("active");
   backdrop.classList.remove("active");
-  toggle.style.display = "flex"; // show hamburger
+  toggle.classList.remove("active");
 }
 
-toggle.addEventListener("click", openMenu);
+toggle.addEventListener("click", () => {
+  if (menu.classList.contains("active")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
 closeBtn.addEventListener("click", closeMenu);
 backdrop.addEventListener("click", closeMenu);

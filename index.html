@@ -28,8 +28,14 @@
             </div>
         </nav>
         <div class="offcanvas-menu" id="offcanvasMenu">
-            <button class="close-btn" id="closeMenu">&times;</button>
+            <button class="close-btn" id="closeMenu" aria-label="Close menu">
+                <span></span>
+                <span></span>
+            </button>
             <ul class="menu-links">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
                 <li>
                     <a href="#about">About</a>
                 </li>
@@ -42,10 +48,10 @@
                 <li>
                     <a href="#blog">Blog</a>
                 </li>
-                <li>
-                    <a href="#contact" class="cta-btn">Contact Us</a>
-                </li>
             </ul>
+            <div>
+                <a href="#contact" class="cta-btn">Contact Us</a>
+            </div>
         </div>
         <div class="menu-backdrop" id="menuBackdrop"></div>
         <!-- HERO -->
@@ -283,13 +289,6 @@ and perform when it matters most
         </script>
         <script>
              document.getElementById("year").textContent = new Date().getFullYear();
-        </script>
-        <script>
-const toggle = document.getElementById("menuToggle");
-
-toggle.addEventListener("click", () => {
-  toggle.classList.toggle("active");
-});
         </script>
     </body>
 </html>
