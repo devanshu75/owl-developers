@@ -1,30 +1,26 @@
 /* =========================================
-   MOBILE MENU TOGGLE
+   Menu Toggle
 ========================================= */
+const menu = document.getElementById("offcanvasMenu");
 const toggle = document.getElementById("menuToggle");
-const navCollapse = document.getElementById("owlNav");
+const closeBtn = document.getElementById("closeMenu");
+const backdrop = document.getElementById("menuBackdrop");
 
-toggle.addEventListener("click", () => {
-  toggle.classList.toggle("active");
-  navCollapse.classList.toggle("show");
-});
+function openMenu() {
+  menu.classList.add("active");
+  backdrop.classList.add("active");
+  toggle.style.display = "none"; // hide hamburger
+}
 
-/* Close mobile menu when tab clicked */
-document.querySelectorAll(".nav-link, .nav-cta-btn").forEach((el) => {
-  el.addEventListener("click", () => {
-    toggle.classList.remove("active");
-    navCollapse.classList.remove("show");
-  });
-});
+function closeMenu() {
+  menu.classList.remove("active");
+  backdrop.classList.remove("active");
+  toggle.style.display = "flex"; // show hamburger
+}
 
-/* =========================================
-   NAVBAR SHRINK ON SCROLL
-========================================= */
-window.addEventListener("scroll", () => {
-  document
-    .querySelector(".owl-navbar")
-    .classList.toggle("shrink", window.scrollY > 50);
-});
+toggle.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+backdrop.addEventListener("click", closeMenu);
 
 /* =========================================
    SLIDING INDICATOR (BOOTSTRAP TABS SAFE)
@@ -70,3 +66,6 @@ window.addEventListener("resize", () => {
   const active = document.querySelector(".owl-menu .nav-link.active");
   if (active) moveIndicator(active);
 });
+
+//Footer Code
+document.getElementById("year").textContent = new Date().getFullYear();
