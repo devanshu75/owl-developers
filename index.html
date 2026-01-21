@@ -281,5 +281,15 @@ and perform when it matters most
         <script>
   AOS.init();
         </script>
+        <script>
+             document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+        <script>
+const toggle = document.getElementById("menuToggle");
+
+toggle.addEventListener("click", () => {
+  toggle.classList.toggle("active");
+});
+        </script>
     </body>
 </html>

@@ -101,23 +101,31 @@ body {
 }
 
 .hamburger {
-  width: 36px;
-  height: 26px;
+  width: 32px;
+  height: 18px;
   background: none;
   border: none;
+  position: relative;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
-  z-index: 10001;
-  transition: opacity 0.25s ease;
 }
 
 .hamburger span {
-  height: 3px;
+  height: 2px;
   width: 100%;
   background: #facc15;
-  border-radius: 2px;
+  border-radius: 10px;
+  transition: 0.35s ease;
+}
+
+/* When menu is open */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* offcanvas */
