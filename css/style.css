@@ -233,6 +233,35 @@ body {
 }
 
 /* =========================
+   CURSOR SPOTLIGHT
+========================= */
+.cursor-spotlight {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 30%,
+    rgba(255, 255, 255, 0.02) 50%,
+    transparent 65%
+  );
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+/* Ensure content stays above spotlight */
+.menu-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
