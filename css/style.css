@@ -63,18 +63,6 @@ body {
    NAVBAR
 ========================================= */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  background: #fff;
-  overflow-x: hidden;
-}
-
 /* =========================
    HAMBURGER
 ========================= */
@@ -82,8 +70,8 @@ body {
   position: fixed;
   top: 24px;
   right: 24px;
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #000;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -175,6 +163,40 @@ body {
 }
 
 .menu a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.text-base {
+  color: rgba(255, 255, 255, 0.25);
+  transition: opacity 0.4s ease;
+}
+
+.text-fill {
+  position: absolute;
+  inset: 0;
+  color: #fff;
+  clip-path: inset(0 100% 0 0); /* hidden from right */
+  transition: clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
+}
+
+.menu a:hover .text-fill {
+  clip-path: inset(0 0 0 0);
+}
+
+.menu:hover .menu a:not(:hover) .text-base {
+  opacity: 0.15;
+}
+
+.menu a:not(:hover) .text-fill {
+  clip-path: inset(0 100% 0 0);
+}
+
+.menu a {
   text-decoration: none;
   color: #fff;
   transition: 0.4s ease;
@@ -232,52 +254,16 @@ body {
   margin-bottom: 6px;
 }
 
-/* =========================
-   CURSOR SPOTLIGHT
-========================= */
-.cursor-spotlight {
-  position: fixed;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.06) 30%,
-    rgba(255, 255, 255, 0.02) 50%,
-    transparent 65%
-  );
-  pointer-events: none;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
-
 /* Ensure content stays above spotlight */
 .menu-wrapper {
   position: relative;
   z-index: 2;
 }
 
-
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  .menu-wrapper {
-    grid-template-columns: 1fr;
-    padding: 100px 40px;
-    gap: 40px;
-  }
-
-  .menu li {
-    font-size: 2.6rem;
-  }
-
-  .menu li::before {
-    left: -50px;
-  }
 }
 
 /* =========================================
@@ -806,6 +792,20 @@ body {
 
   .portfolio-card img {
     height: 180px;
+  }
+
+  .menu-wrapper {
+    grid-template-columns: 1fr;
+    padding: 100px 40px;
+    gap: 40px;
+  }
+
+  .menu li {
+    font-size: 2.6rem;
+  }
+
+  .menu li::before {
+    left: -50px;
   }
 }
 
