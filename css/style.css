@@ -176,7 +176,7 @@ body {
 
 .menu a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.25);
+  color: #fff;
   transition: 0.4s ease;
   position: relative;
 }
