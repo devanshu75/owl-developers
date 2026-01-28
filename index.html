@@ -18,42 +18,51 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <nav class="owl-navbar">
-            <div class="nav-inner">
-                <button class="hamburger" id="menuToggle" aria-label="Open menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </nav>
-        <div class="offcanvas-menu" id="offcanvasMenu">
-            <button class="close-btn" id="closeMenu" aria-label="Close menu">
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="menu-links">
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#services">Services</a>
-                </li>
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-                <li>
-                    <a href="#blog">Blog</a>
-                </li>
-            </ul>
-            <div>
-                <a href="#contact" class="cta-btn">Contact Us</a>
+        <!-- Hamburger -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!-- Menu Overlay -->
+        <div class="menu-overlay" id="menuOverlay">
+            <div class="menu-wrapper">
+                <!-- LEFT : MENU -->
+                <nav class="menu">
+                    <ul>
+                        <li data-index="01">
+                            <a href="#">Work</a>
+                        </li>
+                        <li data-index="02">
+                            <a href="#">Services</a>
+                        </li>
+                        <li data-index="03">
+                            <a href="#">About</a>
+                        </li>
+                        <li data-index="04">
+                            <a href="#">Insights</a>
+                        </li>
+                        <li data-index="05">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- RIGHT : ADDRESS -->
+                <div class="menu-address">
+                    <h4>Contact</h4>
+                    <p>hello@owldevelopers.com</p>
+                    <p>+91 99999 99999</p>
+                    <h4>Address</h4>
+                    <p>
+                        Owl Developers
+                        <br>
+                        Surat, Gujarat
+                        <br>
+                        India
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="menu-backdrop" id="menuBackdrop"></div>
         <!-- HERO -->
         <section id="home" class="section hero hero-layered">
             <div class="container-fluid">
@@ -80,167 +89,156 @@ and perform when it matters most
             </div>
         </section>
         <!-- ABOUT -->
-        <div class="stack-wrapper">
-            <section class="section about-luxury" id="about">
-                <div class="section-inner">
-                    <div class="container">
-                        <div class="about-row">
-                            <div class="about-left">
-                                <h2>
-                                    WHAT MAKES US
-                                    <span>DIFFERENT</span>
-                                </h2>
-                            </div>
-                            <div class="about-divider"></div>
-                            <div class="about-right">
-                                <p>
-                                    Owl Developers is where smart design meets powerful code.
+        <section class="section about-luxury" id="about">
+            <div class="container">
+                <div class="about-row">
+                    <div class="about-left">
+                        <h2>
+                            WHAT MAKES US
+                            <span>DIFFERENT</span>
+                        </h2>
+                    </div>
+                    <div class="about-divider"></div>
+                    <div class="about-right">
+                        <p>
+                            Owl Developers is where smart design meets powerful code.
           We create fast, secure, and scalable websites and web applications
           that don’t just look good — they perform.
-                                </p>
-                                <p>
-                                    Every pixel we design and every line of code we write is focused
+                        </p>
+                        <p>
+                            Every pixel we design and every line of code we write is focused
           on growth, visibility, and long-term impact. With clean, modern
           technology and a user-first mindset, we turn digital ideas into
           intelligent products that help brands stand out, connect, and scale.
-                                </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SERVICES -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title services_title">Services</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="service-item_wrap py-4">
+                            <div class="service-item">
+                                <span class="service-number">01</span>
+                                <div class="service-content">
+                                    <h3 class="service-title">Web Development</h3>
+                                    <p class="service-desc">
+                                        High-performance, mobile-first websites built to convert visitors into customers.
+                                    </p>
+                                </div>
                             </div>
+                            <div class="service-line"></div>
                         </div>
-                        <div class="bg-logo">
-                            <img src="./assets/images/bg-logo.png" alt="" srcset="">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item_wrap py-4">
+                            <div class="service-item">
+                                <span class="service-number">02</span>
+                                <div class="service-content">
+                                    <h3 class="service-title">Graphic Design</h3>
+                                    <p class="service-desc">
+                                        Clean, modern visuals that strengthen your brand and grab attention instantly.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="service-line"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item_wrap py-4">
+                            <div class="service-item">
+                                <span class="service-number">03</span>
+                                <div class="service-content">
+                                    <h3 class="service-title">App Development</h3>
+                                    <p class="service-desc">
+                                        Scalable and user-friendly apps designed for speed, security, and future growth.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="service-line"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item_wrap py-4">
+                            <div class="service-item">
+                                <span class="service-number">04</span>
+                                <div class="service-content">
+                                    <h3 class="service-title">Digital Marketing</h3>
+                                    <p class="service-desc">
+                                        Data-driven strategies that increase traffic, leads, and brand visibility.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="service-line"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item_wrap py-4">
+                            <div class="service-item">
+                                <span class="service-number">05</span>
+                                <div class="service-content">
+                                    <h3 class="service-title">Social Media Packs</h3>
+                                    <p class="service-desc">
+                                        Ready-to-post designs and content that keep your brand active and engaging.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="service-line"></div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- SERVICES -->
-            <section id="services" class="section">
-                <div class="section-inner">
-                    <div class="container">
-                        <h2 class="section-title services_title">Services</h2>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="service-item_wrap py-4">
-                                    <div class="service-item">
-                                        <span class="service-number">01</span>
-                                        <div class="service-content">
-                                            <h3 class="service-title">Web Development</h3>
-                                            <p class="service-desc">
-                                                High-performance, mobile-first websites built to convert visitors into customers.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="service-line"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item_wrap py-4">
-                                    <div class="service-item">
-                                        <span class="service-number">02</span>
-                                        <div class="service-content">
-                                            <h3 class="service-title">Graphic Design</h3>
-                                            <p class="service-desc">
-                                                Clean, modern visuals that strengthen your brand and grab attention instantly.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="service-line"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item_wrap py-4">
-                                    <div class="service-item">
-                                        <span class="service-number">03</span>
-                                        <div class="service-content">
-                                            <h3 class="service-title">App Development</h3>
-                                            <p class="service-desc">
-                                                Scalable and user-friendly apps designed for speed, security, and future growth.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="service-line"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item_wrap py-4">
-                                    <div class="service-item">
-                                        <span class="service-number">04</span>
-                                        <div class="service-content">
-                                            <h3 class="service-title">Digital Marketing</h3>
-                                            <p class="service-desc">
-                                                Data-driven strategies that increase traffic, leads, and brand visibility.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="service-line"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item_wrap py-4">
-                                    <div class="service-item">
-                                        <span class="service-number">05</span>
-                                        <div class="service-content">
-                                            <h3 class="service-title">Social Media Packs</h3>
-                                            <p class="service-desc">
-                                                Ready-to-post designs and content that keep your brand active and engaging.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="service-line"></div>
-                                </div>
+            </div>
+        </section>
+        <!-- PORTFOLIO -->
+        <section id="portfolio" class="section portfolio py-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col text-center">
+                        <h2 class="section-title">Portfolio</h2>
+                        <p class="text-dark-50">A few projects that reflect our design & development quality.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <!-- Card -->
+                    <div class="col-sm-6 col-lg-4 d-flex">
+                        <div class="portfolio-card w-100">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="">
+                            <div class="card-body d-flex flex-column">
+                                <h5>Business Website</h5>
+                                <p>Modern responsive site for a growing brand.</p>
+                                <a href="#" class="btn btn-portfolio mt-auto">View Project</a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!-- PORTFOLIO -->
-            <section id="portfolio" class="section portfolio py-5">
-                <div class="section-inner">
-                    <div class="container">
-                        <div class="row mb-5">
-                            <div class="col text-center">
-                                <h2 class="section-title">Portfolio</h2>
-                                <p class="text-dark-50">A few projects that reflect our design & development quality.</p>
+                    <!-- Card -->
+                    <div class="col-sm-6 col-lg-4 d-flex">
+                        <div class="portfolio-card w-100">
+                            <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=900&q=80" alt="">
+                            <div class="card-body d-flex flex-column">
+                                <h5>UI Dashboard</h5>
+                                <p>React dashboard for analytics & insights.</p>
+                                <a href="#" class="btn btn-portfolio mt-auto">View Project</a>
                             </div>
                         </div>
-                        <div class="row g-4">
-                            <!-- Card -->
-                            <div class="col-sm-6 col-lg-4 d-flex">
-                                <div class="portfolio-card w-100">
-                                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="">
-                                    <div class="card-body d-flex flex-column">
-                                        <h5>Business Website</h5>
-                                        <p>Modern responsive site for a growing brand.</p>
-                                        <a href="#" class="btn btn-portfolio mt-auto">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card -->
-                            <div class="col-sm-6 col-lg-4 d-flex">
-                                <div class="portfolio-card w-100">
-                                    <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=900&q=80" alt="">
-                                    <div class="card-body d-flex flex-column">
-                                        <h5>UI Dashboard</h5>
-                                        <p>React dashboard for analytics & insights.</p>
-                                        <a href="#" class="btn btn-portfolio mt-auto">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card -->
-                            <div class="col-sm-6 col-lg-4 d-flex">
-                                <div class="portfolio-card w-100">
-                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="">
-                                    <div class="card-body d-flex flex-column">
-                                        <h5>Creative Studio</h5>
-                                        <p>Brand website with bold visual identity.</p>
-                                        <a href="#" class="btn btn-portfolio mt-auto">View Project</a>
-                                    </div>
-                                </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="col-sm-6 col-lg-4 d-flex">
+                        <div class="portfolio-card w-100">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="">
+                            <div class="card-body d-flex flex-column">
+                                <h5>Creative Studio</h5>
+                                <p>Brand website with bold visual identity.</p>
+                                <a href="#" class="btn btn-portfolio mt-auto">View Project</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
         <!-- CONTACT -->
         <section id="contact" class="contact section">
             <div class="container">
@@ -343,32 +341,6 @@ window.addEventListener("scroll", () => {
   bgText.style.transform = `translateY(${scrolled * 0.5}px)`;
 });
         </script>
-        <script>
-gsap.registerPlugin(ScrollTrigger);
-
-const panels = gsap.utils.toArray(".stack-wrapper .section");
-
-panels.forEach((panel, i) => {
-
-  const inner = panel.querySelector(".section-inner");
-
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: panel,
-      start: "top top",
-      end: () => "+=" + panel.offsetHeight,
-      scrub: true,
-      pin: true,
-      pinSpacing: true,
-    }
-  });
-
-  tl.fromTo(inner,
-    { scale: 1, opacity: 1 },
-    { scale: 0.85, opacity: 0, ease: "none" }
-  );
-
-});
-        </script>
+        <script></script>
     </body>
 </html>
